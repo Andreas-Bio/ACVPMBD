@@ -1,0 +1,2 @@
+Put the content of this folder in the same directory as main.R and start RStudio by clicking on the main.R file or any other way projects can be opened in RStudio.
+The project will be loaded and renv information will be used to restore packages to the version which was used during the creation of this script.

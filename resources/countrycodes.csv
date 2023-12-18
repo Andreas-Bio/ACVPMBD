@@ -1,0 +1,252 @@
+"code"	"name"	"gbif_name"	"UNsubregion"	"UNinterregion"
+"AD"	"Andorra"	"ANDORRA"	"Southern Europe"	NA
+"AE"	"United Arab Emirates"	"UNITED_ARAB_EMIRATES"	"Western Asia"	NA
+"AF"	"Afghanistan"	"AFGHANISTAN"	"Southern Asia"	NA
+"AG"	"Antigua and Barbuda"	"ANTIGUA_BARBUDA"	"Latin America and the Caribbean"	"Caribbean"
+"AI"	"Anguilla"	"ANGUILLA"	"Latin America and the Caribbean"	"Caribbean"
+"AL"	"Albania"	"ALBANIA"	"Southern Europe"	NA
+"AM"	"Armenia"	"ARMENIA"	"Western Asia"	NA
+"AO"	"Angola"	"ANGOLA"	"Sub-Saharan Africa"	"Middle Africa"
+"AQ"	"Antarctica"	"ANTARCTICA"	"Antarctica"	NA
+"AR"	"Argentina"	"ARGENTINA"	"Latin America and the Caribbean"	"South America"
+"AS"	"American Samoa"	"AMERICAN_SAMOA"	"Polynesia"	NA
+"AT"	"Austria"	"AUSTRIA"	"Western Europe"	NA
+"AU"	"Australia"	"AUSTRALIA"	"Australia and New Zealand"	NA
+"AW"	"Aruba"	"ARUBA"	"Latin America and the Caribbean"	"Caribbean"
+"AX"	"Aland Islands"	"ALAND_ISLANDS"	"Northern Europe"	NA
+"AZ"	"Azerbaijan"	"AZERBAIJAN"	"Western Asia"	NA
+"BA"	"Bosnia and Herzegovina"	"BOSNIA_HERZEGOVINA"	"Southern Europe"	NA
+"BB"	"Barbados"	"BARBADOS"	"Latin America and the Caribbean"	"Caribbean"
+"BD"	"Bangladesh"	"BANGLADESH"	"Southern Asia"	NA
+"BE"	"Belgium"	"BELGIUM"	"Western Europe"	NA
+"BF"	"Burkina Faso"	"BURKINA_FASO"	"Sub-Saharan Africa"	"Western Africa"
+"BG"	"Bulgaria"	"BULGARIA"	"Eastern Europe"	NA
+"BH"	"Bahrain"	"BAHRAIN"	"Western Asia"	NA
+"BI"	"Burundi"	"BURUNDI"	"Sub-Saharan Africa"	"Eastern Africa"
+"BJ"	"Benin"	"BENIN"	"Sub-Saharan Africa"	"Western Africa"
+"BL"	"Saint Barthelemy"	"SAINT_BARTHELEMY"	"Latin America and the Caribbean"	"Caribbean"
+"BM"	"Bermuda"	"BERMUDA"	"Northern America"	NA
+"BN"	"Brunei Darussalam"	"BRUNEI_DARUSSALAM"	"South-eastern Asia"	NA
+"BO"	"Bolivia, Plurinational State of"	"BOLIVIA"	"Latin America and the Caribbean"	"South America"
+"BQ"	"Bonaire, Sint Eustatius and Saba"	"BONAIRE_SINT_EUSTATIUS_SABA"	"Latin America and the Caribbean"	"Caribbean"
+"BR"	"Brazil"	"BRAZIL"	"Latin America and the Caribbean"	"South America"
+"BS"	"Bahamas"	"BAHAMAS"	"Latin America and the Caribbean"	"Caribbean"
+"BT"	"Bhutan"	"BHUTAN"	"Southern Asia"	NA
+"BV"	"Bouvet Island"	"BOUVET_ISLAND"	"Latin America and the Caribbean"	"South America"
+"BW"	"Botswana"	"BOTSWANA"	"Sub-Saharan Africa"	"Southern Africa"
+"BY"	"Belarus"	"BELARUS"	"Eastern Europe"	NA
+"BZ"	"Belize"	"BELIZE"	"Latin America and the Caribbean"	"Central America"
+"CA"	"Canada"	"CANADA"	"Northern America"	NA
+"CC"	"Cocos (Keeling) Islands"	"COCOS_ISLANDS"	"Australia and New Zealand"	NA
+"CD"	"Congo, the Democratic Republic of the"	"CONGO_DEMOCRATIC_REPUBLIC"	"Sub-Saharan Africa"	"Middle Africa"
+"CF"	"Central African Republic"	"CENTRAL_AFRICAN_REPUBLIC"	"Sub-Saharan Africa"	"Middle Africa"
+"CG"	"Congo"	"CONGO"	"Sub-Saharan Africa"	"Middle Africa"
+"CH"	"Switzerland"	"SWITZERLAND"	"Western Europe"	NA
+"CI"	"Cote d'Ivoire"	"COTE_DIVOIRE"	"Sub-Saharan Africa"	"Western Africa"
+"CK"	"Cook Islands"	"COOK_ISLANDS"	"Polynesia"	NA
+"CL"	"Chile"	"CHILE"	"Latin America and the Caribbean"	"South America"
+"CM"	"Cameroon"	"CAMEROON"	"Sub-Saharan Africa"	"Middle Africa"
+"CN"	"China"	"CHINA"	"Eastern Asia"	NA
+"CO"	"Colombia"	"COLOMBIA"	"Latin America and the Caribbean"	"South America"
+"CR"	"Costa Rica"	"COSTA_RICA"	"Latin America and the Caribbean"	"Central America"
+"CU"	"Cuba"	"CUBA"	"Latin America and the Caribbean"	"Caribbean"
+"CV"	"Cape Verde"	"CAPE_VERDE"	"Sub-Saharan Africa"	"Western Africa"
+"CW"	"Curacao"	"CURACAO"	"Latin America and the Caribbean"	"Caribbean"
+"CX"	"Christmas Island"	"CHRISTMAS_ISLAND"	"Australia and New Zealand"	NA
+"CY"	"Cyprus"	"CYPRUS"	"Western Asia"	NA
+"CZ"	"Czech Republic"	"CZECH_REPUBLIC"	"Eastern Europe"	NA
+"DE"	"Germany"	"GERMANY"	"Western Europe"	NA
+"DJ"	"Djibouti"	"DJIBOUTI"	"Sub-Saharan Africa"	"Eastern Africa"
+"DK"	"Denmark"	"DENMARK"	"Northern Europe"	NA
+"DM"	"Dominica"	"DOMINICA"	"Latin America and the Caribbean"	"Caribbean"
+"DO"	"Dominican Republic"	"DOMINICAN_REPUBLIC"	"Latin America and the Caribbean"	"Caribbean"
+"DZ"	"Algeria"	"ALGERIA"	"Northern Africa"	NA
+"EC"	"Ecuador"	"ECUADOR"	"Latin America and the Caribbean"	"South America"
+"EE"	"Estonia"	"ESTONIA"	"Northern Europe"	NA
+"EG"	"Egypt"	"EGYPT"	"Northern Africa"	NA
+"EH"	"Western Sahara"	"WESTERN_SAHARA"	"Northern Africa"	NA
+"ER"	"Eritrea"	"ERITREA"	"Sub-Saharan Africa"	"Eastern Africa"
+"ES"	"Spain"	"SPAIN"	"Southern Europe"	NA
+"ET"	"Ethiopia"	"ETHIOPIA"	"Sub-Saharan Africa"	"Eastern Africa"
+"FI"	"Finland"	"FINLAND"	"Northern Europe"	NA
+"FJ"	"Fiji"	"FIJI"	"Melanesia"	NA
+"FK"	"Falkland Islands (Malvinas)"	"FALKLAND_ISLANDS"	"Latin America and the Caribbean"	"South America"
+"FM"	"Micronesia, Federated States of"	"MICRONESIA"	"Micronesia"	NA
+"FO"	"Faroe Islands"	"FAROE_ISLANDS"	"Northern Europe"	NA
+"FR"	"France"	"FRANCE"	"Western Europe"	NA
+"GA"	"Gabon"	"GABON"	"Sub-Saharan Africa"	"Middle Africa"
+"GB"	"United Kingdom"	"UNITED_KINGDOM"	"Northern Europe"	NA
+"GD"	"Grenada"	"GRENADA"	"Latin America and the Caribbean"	"Caribbean"
+"GE"	"Georgia"	"GEORGIA"	"Western Asia"	NA
+"GF"	"French Guiana"	"FRENCH_GUIANA"	"Latin America and the Caribbean"	"South America"
+"GG"	"Guernsey"	"GUERNSEY"	"Northern Europe"	"Channel Islands"
+"GH"	"Ghana"	"GHANA"	"Sub-Saharan Africa"	"Western Africa"
+"GI"	"Gibraltar"	"GIBRALTAR"	"Southern Europe"	NA
+"GL"	"Greenland"	"GREENLAND"	"Northern America"	NA
+"GM"	"Gambia"	"GAMBIA"	"Sub-Saharan Africa"	"Western Africa"
+"GN"	"Guinea"	"GUINEA"	"Sub-Saharan Africa"	"Western Africa"
+"GP"	"Guadeloupe"	"GUADELOUPE"	"Latin America and the Caribbean"	"Caribbean"
+"GQ"	"Equatorial Guinea"	"EQUATORIAL_GUINEA"	"Sub-Saharan Africa"	"Middle Africa"
+"GR"	"Greece"	"GREECE"	"Southern Europe"	NA
+"GS"	"South Georgia and the South Sandwich Islands"	"SOUTH_GEORGIA_SANDWICH_ISLANDS"	"Latin America and the Caribbean"	"South America"
+"GT"	"Guatemala"	"GUATEMALA"	"Latin America and the Caribbean"	"Central America"
+"GU"	"Guam"	"GUAM"	"Micronesia"	NA
+"GW"	"Guinea-Bissau"	"GUINEA_BISSAU"	"Sub-Saharan Africa"	"Western Africa"
+"GY"	"Guyana"	"GUYANA"	"Latin America and the Caribbean"	"South America"
+"HK"	"Hong Kong"	"HONG_KONG"	"Eastern Asia"	NA
+"HM"	"Heard Island and McDonald Islands"	"HEARD_MCDONALD_ISLANDS"	"Australia and New Zealand"	NA
+"HN"	"Honduras"	"HONDURAS"	"Latin America and the Caribbean"	"Central America"
+"HR"	"Croatia"	"CROATIA"	"Southern Europe"	NA
+"HT"	"Haiti"	"HAITI"	"Latin America and the Caribbean"	"Caribbean"
+"HU"	"Hungary"	"HUNGARY"	"Eastern Europe"	NA
+"ID"	"Indonesia"	"INDONESIA"	"South-eastern Asia"	NA
+"IE"	"Ireland"	"IRELAND"	"Northern Europe"	NA
+"IL"	"Israel"	"ISRAEL"	"Western Asia"	NA
+"IM"	"Isle of Man"	"ISLE_OF_MAN"	"Northern Europe"	NA
+"IN"	"India"	"INDIA"	"Southern Asia"	NA
+"IO"	"British Indian Ocean Territory"	"BRITISH_INDIAN_OCEAN_TERRITORY"	"Sub-Saharan Africa"	"Eastern Africa"
+"IQ"	"Iraq"	"IRAQ"	"Western Asia"	NA
+"IR"	"Iran, Islamic Republic of"	"IRAN"	"Southern Asia"	NA
+"IS"	"Iceland"	"ICELAND"	"Northern Europe"	NA
+"IT"	"Italy"	"ITALY"	"Southern Europe"	NA
+"JE"	"Jersey"	"JERSEY"	"Northern Europe"	"Channel Islands"
+"JM"	"Jamaica"	"JAMAICA"	"Latin America and the Caribbean"	"Caribbean"
+"JO"	"Jordan"	"JORDAN"	"Western Asia"	NA
+"JP"	"Japan"	"JAPAN"	"Eastern Asia"	NA
+"KE"	"Kenya"	"KENYA"	"Sub-Saharan Africa"	"Eastern Africa"
+"KG"	"Kyrgyzstan"	"KYRGYZSTAN"	"Central Asia"	NA
+"KH"	"Cambodia"	"CAMBODIA"	"South-eastern Asia"	NA
+"KI"	"Kiribati"	"KIRIBATI"	"Micronesia"	NA
+"KM"	"Comoros"	"COMOROS"	"Sub-Saharan Africa"	"Eastern Africa"
+"KN"	"Saint Kitts and Nevis"	"SAINT_KITTS_NEVIS"	"Latin America and the Caribbean"	"Caribbean"
+"XK"	"Kosovo"	"KOSOVO"	"Southern Europe"	NA
+"KP"	"Korea, Democratic People's Republic of"	"KOREA_NORTH"	"Eastern Asia"	NA
+"KR"	"Korea, Republic of"	"KOREA_SOUTH"	"Eastern Asia"	NA
+"KW"	"Kuwait"	"KUWAIT"	"Western Asia"	NA
+"KY"	"Cayman Islands"	"CAYMAN_ISLANDS"	"Latin America and the Caribbean"	"Caribbean"
+"KZ"	"Kazakhstan"	"KAZAKHSTAN"	"Central Asia"	NA
+"LA"	"Lao People's Democratic Republic"	"LAO"	"South-eastern Asia"	NA
+"LB"	"Lebanon"	"LEBANON"	"Western Asia"	NA
+"LC"	"Saint Lucia"	"SAINT_LUCIA"	"Latin America and the Caribbean"	"Caribbean"
+"LI"	"Liechtenstein"	"LIECHTENSTEIN"	"Western Europe"	NA
+"LK"	"Sri Lanka"	"SRI_LANKA"	"Southern Asia"	NA
+"LR"	"Liberia"	"LIBERIA"	"Sub-Saharan Africa"	"Western Africa"
+"LS"	"Lesotho"	"LESOTHO"	"Sub-Saharan Africa"	"Southern Africa"
+"LT"	"Lithuania"	"LITHUANIA"	"Northern Europe"	NA
+"LU"	"Luxembourg"	"LUXEMBOURG"	"Western Europe"	NA
+"LV"	"Latvia"	"LATVIA"	"Northern Europe"	NA
+"LY"	"Libya"	"LIBYA"	"Northern Africa"	NA
+"MA"	"Morocco"	"MOROCCO"	"Northern Africa"	NA
+"MC"	"Monaco"	"MONACO"	"Western Europe"	NA
+"MD"	"Moldova, Republic of"	"MOLDOVA"	"Eastern Europe"	NA
+"ME"	"Montenegro"	"MONTENEGRO"	"Southern Europe"	NA
+"MF"	"Saint Martin (French part)"	"SAINT_MARTIN_FRENCH"	"Latin America and the Caribbean"	"Caribbean"
+"MG"	"Madagascar"	"MADAGASCAR"	"Sub-Saharan Africa"	"Eastern Africa"
+"MH"	"Marshall Islands"	"MARSHALL_ISLANDS"	"Micronesia"	NA
+"MK"	"Macedonia, the former Yugoslav Republic of"	"MACEDONIA"	"Southern Europe"	NA
+"ML"	"Mali"	"MALI"	"Sub-Saharan Africa"	"Western Africa"
+"MM"	"Myanmar"	"MYANMAR"	"South-eastern Asia"	NA
+"MN"	"Mongolia"	"MONGOLIA"	"Eastern Asia"	NA
+"MO"	"Macao"	"MACAO"	"Eastern Asia"	NA
+"MP"	"Northern Mariana Islands"	"NORTHERN_MARIANA_ISLANDS"	"Micronesia"	NA
+"MQ"	"Martinique"	"MARTINIQUE"	"Latin America and the Caribbean"	"Caribbean"
+"MR"	"Mauritania"	"MAURITANIA"	"Sub-Saharan Africa"	"Western Africa"
+"MS"	"Montserrat"	"MONTSERRAT"	"Latin America and the Caribbean"	"Caribbean"
+"MT"	"Malta"	"MALTA"	"Southern Europe"	NA
+"MU"	"Mauritius"	"MAURITIUS"	"Sub-Saharan Africa"	"Eastern Africa"
+"MV"	"Maldives"	"MALDIVES"	"Southern Asia"	NA
+"MW"	"Malawi"	"MALAWI"	"Sub-Saharan Africa"	"Eastern Africa"
+"MX"	"Mexico"	"MEXICO"	"Latin America and the Caribbean"	"Central America"
+"MY"	"Malaysia"	"MALAYSIA"	"South-eastern Asia"	NA
+"MZ"	"Mozambique"	"MOZAMBIQUE"	"Sub-Saharan Africa"	"Eastern Africa"
+"NA"	"Namibia"	"NAMIBIA"	"Sub-Saharan Africa"	"Southern Africa"
+"NC"	"New Caledonia"	"NEW_CALEDONIA"	"Melanesia"	NA
+"NE"	"Niger"	"NIGER"	"Sub-Saharan Africa"	"Western Africa"
+"NF"	"Norfolk Island"	"NORFOLK_ISLAND"	"Australia and New Zealand"	NA
+"NG"	"Nigeria"	"NIGERIA"	"Sub-Saharan Africa"	"Western Africa"
+"NI"	"Nicaragua"	"NICARAGUA"	"Latin America and the Caribbean"	"Central America"
+"NL"	"Netherlands"	"NETHERLANDS"	"Western Europe"	NA
+"NO"	"Norway"	"NORWAY"	"Northern Europe"	NA
+"NP"	"Nepal"	"NEPAL"	"Southern Asia"	NA
+"NR"	"Nauru"	"NAURU"	"Micronesia"	NA
+"NU"	"Niue"	"NIUE"	"Polynesia"	NA
+"NZ"	"New Zealand"	"NEW_ZEALAND"	"Australia and New Zealand"	NA
+"OM"	"Oman"	"OMAN"	"Western Asia"	NA
+"PA"	"Panama"	"PANAMA"	"Latin America and the Caribbean"	"Central America"
+"PE"	"Peru"	"PERU"	"Latin America and the Caribbean"	"South America"
+"PF"	"French Polynesia"	"FRENCH_POLYNESIA"	"Polynesia"	NA
+"PG"	"Papua New Guinea"	"PAPUA_NEW_GUINEA"	"Melanesia"	NA
+"PH"	"Philippines"	"PHILIPPINES"	"South-eastern Asia"	NA
+"PK"	"Pakistan"	"PAKISTAN"	"Southern Asia"	NA
+"PL"	"Poland"	"POLAND"	"Eastern Europe"	NA
+"PM"	"Saint Pierre and Miquelon"	"SAINT_PIERRE_MIQUELON"	"Northern America"	NA
+"PN"	"Pitcairn"	"PITCAIRN"	"Polynesia"	NA
+"PR"	"Puerto Rico"	"PUERTO_RICO"	"Latin America and the Caribbean"	"Caribbean"
+"PS"	"Palestine, State of"	"PALESTINIAN_TERRITORY"	"Western Asia"	NA
+"PT"	"Portugal"	"PORTUGAL"	"Southern Europe"	NA
+"PW"	"Palau"	"PALAU"	"Micronesia"	NA
+"PY"	"Paraguay"	"PARAGUAY"	"Latin America and the Caribbean"	"South America"
+"QA"	"Qatar"	"QATAR"	"Western Asia"	NA
+"RE"	"Reunion"	"REUNION"	"Sub-Saharan Africa"	"Eastern Africa"
+"RO"	"Romania"	"ROMANIA"	"Eastern Europe"	NA
+"RS"	"Serbia"	"SERBIA"	"Southern Europe"	NA
+"RU"	"Russian Federation"	"RUSSIAN_FEDERATION"	"Eastern Europe"	NA
+"RW"	"Rwanda"	"RWANDA"	"Sub-Saharan Africa"	"Eastern Africa"
+"SA"	"Saudi Arabia"	"SAUDI_ARABIA"	"Western Asia"	NA
+"SB"	"Solomon Islands"	"SOLOMON_ISLANDS"	"Melanesia"	NA
+"SC"	"Seychelles"	"SEYCHELLES"	"Sub-Saharan Africa"	"Eastern Africa"
+"SD"	"Sudan"	"SUDAN"	"Northern Africa"	NA
+"SE"	"Sweden"	"SWEDEN"	"Northern Europe"	NA
+"SG"	"Singapore"	"SINGAPORE"	"South-eastern Asia"	NA
+"SH"	"Saint Helena, Ascension and Tristan da Cunha"	"SAINT_HELENA_ASCENSION_TRISTAN_DA_CUNHA"	"Sub-Saharan Africa"	"Western Africa"
+"SI"	"Slovenia"	"SLOVENIA"	"Southern Europe"	NA
+"SJ"	"Svalbard and Jan Mayen"	"SVALBARD_JAN_MAYEN"	"Northern Europe"	NA
+"SK"	"Slovakia"	"SLOVAKIA"	"Eastern Europe"	NA
+"SL"	"Sierra Leone"	"SIERRA_LEONE"	"Sub-Saharan Africa"	"Western Africa"
+"SM"	"San Marino"	"SAN_MARINO"	"Southern Europe"	NA
+"SN"	"Senegal"	"SENEGAL"	"Sub-Saharan Africa"	"Western Africa"
+"SO"	"Somalia"	"SOMALIA"	"Sub-Saharan Africa"	"Eastern Africa"
+"SR"	"Suriname"	"SURINAME"	"Latin America and the Caribbean"	"South America"
+"SS"	"South Sudan"	"SOUTH_SUDAN"	"Sub-Saharan Africa"	"Eastern Africa"
+"ST"	"Sao Tome and Principe"	"SAO_TOME_PRINCIPE"	"Sub-Saharan Africa"	"Middle Africa"
+"SV"	"El Salvador"	"EL_SALVADOR"	"Latin America and the Caribbean"	"Central America"
+"SX"	"Sint Maarten (Dutch part)"	"SINT_MAARTEN"	"Latin America and the Caribbean"	"Caribbean"
+"SY"	"Syrian Arab Republic"	"SYRIA"	"Western Asia"	NA
+"SZ"	"Swaziland"	"SWAZILAND"	"Sub-Saharan Africa"	"Southern Africa"
+"TC"	"Turks and Caicos Islands"	"TURKS_CAICOS_ISLANDS"	"Latin America and the Caribbean"	"Caribbean"
+"TD"	"Chad"	"CHAD"	"Sub-Saharan Africa"	"Middle Africa"
+"TF"	"French Southern Territories"	"FRENCH_SOUTHERN_TERRITORIES"	"Sub-Saharan Africa"	"Eastern Africa"
+"TG"	"Togo"	"TOGO"	"Sub-Saharan Africa"	"Western Africa"
+"TH"	"Thailand"	"THAILAND"	"South-eastern Asia"	NA
+"TJ"	"Tajikistan"	"TAJIKISTAN"	"Central Asia"	NA
+"TK"	"Tokelau"	"TOKELAU"	"Polynesia"	NA
+"TL"	"Timor-Leste"	"TIMOR_LESTE"	"South-eastern Asia"	NA
+"TM"	"Turkmenistan"	"TURKMENISTAN"	"Central Asia"	NA
+"TN"	"Tunisia"	"TUNISIA"	"Northern Africa"	NA
+"TO"	"Tonga"	"TONGA"	"Polynesia"	NA
+"TR"	"Turkey"	"TURKEY"	"Western Asia"	NA
+"TT"	"Trinidad and Tobago"	"TRINIDAD_TOBAGO"	"Latin America and the Caribbean"	"Caribbean"
+"TV"	"Tuvalu"	"TUVALU"	"Polynesia"	NA
+"TW"	"Taiwan (Chinese Province)"	"TAIWAN"	"Eastern Asia"	NA
+"TZ"	"Tanzania, United Republic of"	"TANZANIA"	"Sub-Saharan Africa"	"Eastern Africa"
+"UA"	"Ukraine"	"UKRAINE"	"Eastern Europe"	NA
+"UG"	"Uganda"	"UGANDA"	"Sub-Saharan Africa"	"Eastern Africa"
+"UM"	"United States Minor Outlying Islands"	"UNITED_STATES_OUTLYING_ISLANDS"	"Micronesia"	NA
+"US"	"United States"	"UNITED_STATES"	"Northern America"	NA
+"UY"	"Uruguay"	"URUGUAY"	"Latin America and the Caribbean"	"South America"
+"UZ"	"Uzbekistan"	"UZBEKISTAN"	"Central Asia"	NA
+"VA"	"Holy See (Vatican City State)"	"VATICAN"	"Southern Europe"	NA
+"VC"	"Saint Vincent and the Grenadines"	"SAINT_VINCENT_GRENADINES"	"Latin America and the Caribbean"	"Caribbean"
+"VE"	"Venezuela, Bolivarian Republic of"	"VENEZUELA"	"Latin America and the Caribbean"	"South America"
+"VG"	"Virgin Islands, British"	"VIRGIN_ISLANDS_BRITISH"	"Latin America and the Caribbean"	"Caribbean"
+"VI"	"Virgin Islands, U.S."	"VIRGIN_ISLANDS"	"Latin America and the Caribbean"	"Caribbean"
+"VN"	"Viet Nam"	"VIETNAM"	"South-eastern Asia"	NA
+"VU"	"Vanuatu"	"VANUATU"	"Melanesia"	NA
+"WF"	"Wallis and Futuna"	"WALLIS_FUTUNA"	"Polynesia"	NA
+"WS"	"Samoa"	"SAMOA"	"Polynesia"	NA
+"YE"	"Yemen"	"YEMEN"	"Western Asia"	NA
+"YT"	"Mayotte"	"MAYOTTE"	"Sub-Saharan Africa"	"Eastern Africa"
+"ZA"	"South Africa"	"SOUTH_AFRICA"	"Sub-Saharan Africa"	"Southern Africa"
+"ZM"	"Zambia"	"ZAMBIA"	"Sub-Saharan Africa"	"Eastern Africa"
+"ZW"	"Zimbabwe"	"ZIMBABWE"	"Sub-Saharan Africa"	"Eastern Africa"
+"NA"	"Namibia"	"NAMIBIA"	"Sub-Saharan Africa"	"Southern Africa"
