@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript
+
 #This is the main script for the automated ITS reference database curation
 # Version 1.00, Author: Andreas Kolter
 
