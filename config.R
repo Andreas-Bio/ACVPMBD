@@ -1,5 +1,4 @@
 #set paths  #don't forget the final /
-script_folder <- "/home/bio/Documents/refdat/"
 itsx_directory <- "/home/bio/Software/ITSx_1.1.3/" 
 vsearch_directory <- "C:/R/"
 
