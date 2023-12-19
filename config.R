@@ -10,7 +10,7 @@ out_dir_name <- "output"
 export_tax_style <- "SINTAX"
 
 #define number of cores
-number_of_cores <- 10
+number_of_cores <- parallel::detectCores()-1
 
 #If set to false requires at least 20GB of free hard drive space.
 delete_temporary_files <- FALSE
