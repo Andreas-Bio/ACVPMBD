@@ -43,9 +43,7 @@ download_rentrez_search(genbank_rentrez) #this step should take ~1 hour
 
 #process the xml files, extract metadata and sequence
 raw_input <- list.files(path="./temp", pattern = "its_from_[0-9]*_raw.xml", full.names = T) 
-extract_information_raw(raw_input, disable_IUPAC_filter=F,
-                        disable_keyword_and_noSpecies_removal=F,
-                        disable_check_for_family_CEAE=F)
+extract_information_raw(raw_input)
 
 #read all .fasta files and concatenate them then run ITSx to determine ITS regions, also filters for special characters in species names
 #depending on your processor speed ITSx takes between 2 and 4 hours
