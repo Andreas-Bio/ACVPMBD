@@ -1,12 +1,10 @@
 #This is the main script for the automated ITS reference database curation
 # Version 1.00, Author: Andreas Kolter
 
-if (!"rstudioapi" %in% installed.packages()) install.packages("rstudioapi")
-library("rstudioapi")
+if (!"this.path" %in% installed.packages()) install.packages("this.path")
 
-setwd(
-  dirname(rstudioapi::getActiveDocumentContext()$path)
-  )
+library("this.path")
+setwd(this.path::here())
 
 source("functions.R")
 
