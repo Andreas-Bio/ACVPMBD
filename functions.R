@@ -723,7 +723,7 @@ seq_dereplicate <- function(max_seqspec=10)
     temp_dropme <- c(temp_dropme, temp[-(1:temp_keep_first),"acc"])
   }
   
-  paste0(temp_dropme %>% length, " sequences dropped due to >10 ITS1/2 sequences per species" ) %>% print
+  paste0(temp_dropme %>% length, " sequences dropped due to >",max_seqspec," ITS1/2 sequences per species" ) %>% print
   
   meta4 <- meta4[meta4[,"acc"] %in% temp_dropme %>% not,]
   
