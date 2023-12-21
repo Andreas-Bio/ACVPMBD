@@ -606,9 +606,14 @@ taxonomy_assignment_step4 <- function()
   
   for (i in 1:4)
     xtax[,i] <- match(xtax[,i], tax_sci[,"V1"]) %>% tax_sci[.,"V3"]
-
+  
+  tax_names <- tax_names[tax_names[,"V1"] %in% xtax[,"species.1"],]
+  tax_names <- tax_names[!grepl("common", tax_names[,"V7"]),]
+  tax_names[,"V3"] %<>% gsub("\\[|\\]","",.)
+  
   tax_auth <- tax_names[tax_names[,"V7"]=="authority",]
-  xtax <- match(xtax[,"species.1"], tax_auth[,"V1"]) %>% tax_auth[.,"V3"] %>% cbind.data.frame(xtax,"scientificName"=.)
+  xtax <- match(xtax[,"species"], tax_auth[,"V3"] %>% gsub("([A-Z]{1,}[a-z-]{1,} [,a-z-]{2,}) .*|([A-Z]{1,}[a-z-]{1,} [x]{1,1} [,a-z-]{2,}) .*","\\1\\2",.)) %>%
+    tax_auth[.,"V3"] %>% cbind.data.frame(xtax,"scientificName"=.)
   
   xtax <- xtax[match(meta3[,"xref"] %>% gsub("taxon:","",.) %>% as.integer, xtax[,"orig_xref"]),]  
   
