@@ -631,6 +631,9 @@ taxonomy_assignment_step4 <- function()
   meta3[temp_target,"authority_ncbi"] <- temp_replacement
   xtax <- xtax[!(meta3[,"authority_ncbi"] %>% is.na | meta3[,"authority_ncbi"] ==""),]
   meta3 <- meta3[!(meta3[,"authority_ncbi"] %>% is.na | meta3[,"authority_ncbi"] ==""),]
+
+  #WARNING for some reason some species names contain backslashes, remove those together with single quotation marks and special characters. 
+  meta3[,"authority_ncbi"] %<>% gsub("[^-.()&, 0-9A-Za-z]|  ","",.) 
   
   write.table(x=meta3 , "./step3/step3_meta_edit.csv", quote = TRUE, row.names = FALSE, sep='\t', dec=".", append=FALSE, fileEncoding = "UTF-8")   
   
@@ -670,7 +673,11 @@ taxonomy_assignment_step4 <- function()
   stopCluster(cl)
   closeAllConnections()
   
-  write.table(x=temp_tax , file = "./step3/tax_results.csv", quote = TRUE, row.names = FALSE, sep='\t', dec=".", append=FALSE, fileEncoding = "UTF-8")   
+  write.table(x=temp_tax %>% as.data.frame, file = "./step3/tax_results.csv",
+              quote=FALSE, row.names = FALSE, sep='\t', dec=".", append=FALSE, fileEncoding = "UTF-8")   
+  
+  #temp_tax <- read.table(file = "./step3/tax_results.csv", sep='\t', dec=".",
+  #           fileEncoding = "UTF-8", header=TRUE, quote = "")
   
   temp_tax <- temp_tax[temp_tax[,"kingdom"] != "Animalia",]
   temp_tax <- temp_tax[temp_tax[,"matchType"] != "NONE",]
