@@ -10,8 +10,6 @@ files from GenBank in .xml format will be locally downloaded and
 processed by R and VSEARCH. The GBIF Application Programming Interface
 (API) is used for taxonomic checks.
 
-Specific keywords and R script will be highlighted in grey.
-
 <u>Dependencies & Requirements</u>
 
 ITSx \>= 1.1.3, https://microbiology.se/software/itsx/
