@@ -989,6 +989,7 @@ dist_clean <- function(whichITS=0, family_forced, max_intraspecific, max_global,
     #should match own family if not only sequence in family or only sequence in genus
     
     temp_select <- ( temp_its_check[,"V1"] %>% gsub("^.*_f:(.*)_g:.*","\\1",.) ) != ( temp_its_check[,"V2"] %>% gsub("^.*_f:(.*)_g:.*","\\1",.) )
+    temp_select <- (temp_out %>% names) %in% c(temp_its_check[temp_select,"V1"], temp_its_check[temp_select,"V2"]) 
     
     writeXStringSet(temp_out[temp_select], filepath = "./step8/temp_extracted.fasta", append = F)
     writeXStringSet(temp_out[!temp_select], filepath = "./step8/temp_suspicious_removed.fasta", append = F)
