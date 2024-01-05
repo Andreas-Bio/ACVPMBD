@@ -680,6 +680,7 @@ taxonomy_assignment_step4 <- function()
   #           fileEncoding = "UTF-8", header=TRUE, quote = "")
   
   temp_tax <- temp_tax[temp_tax[,"kingdom"] != "Animalia",]
+  temp_tax <- temp_tax[temp_tax[,"confidence"] >= 95,]
   temp_tax <- temp_tax[temp_tax[,"matchType"] != "NONE",]
   temp_tax <- temp_tax[temp_tax[,"matchType"] != "HIGHERRANK",]
   temp_tax <- temp_tax[temp_tax[,"verbatim_name"] %>% duplicated %>% not,] %>% data.frame
