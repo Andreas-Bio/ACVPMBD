@@ -1250,19 +1250,18 @@ export_seq <- function(include_GBIF_taxID=F, whichITS=0, style="SINTAX", out_dir
   if(whichITS==0)
     temp_select <- meta10[,"X58S_complete"] & meta10[,"ITS1_found"] & meta10[,"ITS2_found"]
   
-  if (style=="SINTAX" & include_GBIF_taxID==F)
-  temp_names <- paste0(meta10[temp_select,"acc"],";tax=p_",meta10[temp_select,"phylum",],",o_",
-                       meta10[temp_select,"order",], ",f_", meta10[temp_select,"family",],
-                       ",g_", meta10[temp_select,"genus",],
-                       ",s_", meta10[temp_select,"species",] %>% gsub(" ","_",.)) %>%
+ if (style=="SINTAX" & include_GBIF_taxID==F)
+  temp_names <- paste0(meta10[temp_select,"acc"],";tax=p:",meta10[temp_select,"phylum",],",o:",
+                       meta10[temp_select,"order",], ",f:", meta10[temp_select,"family",],
+                       ",g:", meta10[temp_select,"genus",],
+                       ",s:", meta10[temp_select,"species",] %>% gsub(" ","_",.)) %>%
     gsub(",[a-z]{1,1}_NA.*","",.)
   
   if (style=="SINTAX" & include_GBIF_taxID==T)
-    temp_names <- paste0(meta10[temp_select,"acc"],"_",meta10[temp_select,"taxid_gbif"],";tax=p_",meta10[temp_select,"phylum",],",o_",
-                         meta10[temp_select,"order",], ",f_", meta10[temp_select,"family",],
-                         ",g_", meta10[temp_select,"genus",],
-                         ",s_", meta10[temp_select,"species",] %>% gsub(" ","_",.))
-  
+    temp_names <- paste0(meta10[temp_select,"acc"],"_",meta10[temp_select,"taxid_gbif"],";tax=p:",meta10[temp_select,"phylum",],",o:",
+                         meta10[temp_select,"order",], ",f:", meta10[temp_select,"family",],
+                         ",g:", meta10[temp_select,"genus",],
+                         ",s:", meta10[temp_select,"species",] %>% gsub(" ","_",.))
 
   if (style=="RDP" & include_GBIF_taxID==F)
   {
