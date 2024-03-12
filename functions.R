@@ -908,7 +908,11 @@ add_spike_ins <- function()
   metas[,c("kingdom","phylum","order","family","genus","species","speciesKey","scientificName")] <- temp_tax[temp_select,c("kingdom", "phylum","order","family","genus","species","usageKey","scientificName")]
   
   metas <- metas[metas[,"kingdom"] %>% is.na %>% not,]
+  metas <- metas[metas[,"family"] %>% is.na %>% not,]
   
+  metas[metas[,"genus"] %>% is.na,"genus"] <- paste0("indet",metas[metas[,"genus"] %>% is.na,"family"])
+  metas[metas[,"species"] %>% is.na,"species"] <- paste0("indet", " ",metas[metas[,"species"] %>% is.na,"genus"] %>% gsub("indet","",.) ) 
+
   meta7 <- read.table(file="./step7/step7_meta.csv", sep='\t', dec=".", fileEncoding = "UTF-8", header = TRUE) 
   meta7 <- cbind.data.frame(meta7, "kingdom"="Plantae")
   
