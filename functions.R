@@ -727,7 +727,7 @@ seq_dereplicate <- function(max_seqspec=10)
       temp[,"ITS2_found"],
       temp[,"X58S_complete"],
       decreasing = T),]
-    temp_keep_first <- c(which(temp[,"ITS1_found"] %>% cumsum <= max_seqspec) , which(temp[,"ITS2_found"] %>% cumsum <= max_seqspec) ) %>% max
+    temp_keep_first <- c(which(temp[,"ITS1_found"] %>% cumsum %>% unique <= max_seqspec) , which(temp[,"ITS2_found"] %>% cumsum %>% unique <= max_seqspec) ) %>% max
     temp_dropme <- c(temp_dropme, temp[-(1:temp_keep_first),"acc"])
   }
   
