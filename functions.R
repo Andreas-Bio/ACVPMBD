@@ -883,7 +883,7 @@ add_spike_ins <- function()
   doParallel::registerDoParallel(cl)
   if (foreach::getDoParRegistered() == FALSE) stop("CLuster could not be registered.")
   
-  download_stop <- ceiling(temp_query %>% length / 1000)
+  download_stop <- ceiling(temp_query %>% nrow / 1000)
   
   temp_tax <- foreach (j = 1:download_stop, .inorder = FALSE, .combine = rbind, .packages=c("rgbif")) %dopar%
     {
