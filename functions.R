@@ -727,8 +727,14 @@ seq_dereplicate <- function(max_seqspec=10)
       temp[,"ITS2_found"],
       temp[,"X58S_complete"],
       decreasing = T),]
-    temp_keep_first <- c(which(temp[,"ITS1_found"] %>% cumsum %>% unique <= max_seqspec) , which(temp[,"ITS2_found"] %>% cumsum %>% unique <= max_seqspec) ) %>% max
-    temp_dropme <- c(temp_dropme, temp[-(1:temp_keep_first),"acc"])
+    
+    temp_ITS1_found <- temp[,"ITS1_found"] %>% cumsum
+    temp_ITS2_found <- temp[,"ITS2_found"] %>% cumsum
+    
+    temp_keep <- ( temp_ITS2_found <= max_seqspec & temp_ITS2_found %>% duplicated %>% not & temp_ITS2_found > 0 ) |
+      ( temp_ITS1_found <= max_seqspec & temp_ITS1_found %>% duplicated %>% not & temp_ITS1_found > 0 )
+    
+    temp_dropme <- c(temp_dropme, temp[!temp_keep,"acc"])
   }
   
   paste0(temp_dropme %>% length, " sequences dropped due to >",max_seqspec," ITS1/2 sequences per species" ) %>% print
