@@ -866,7 +866,8 @@ add_spike_ins <- function()
   filter_by_ITSx(input_folder = "./step6/", output_folder = "./step7/", its_minlen, meta_in = "spikein_meta.csv",
                  meta_out = "spikein2_meta.csv", itsx_file = "spike_ins.positions.txt", dna_file = "spike_ins.fasta",
                  min_58S_length=min_58S_length, max_58S_length=max_58S_length)
-  
+
+  # start here for manual update without ITSx!
   file.copy(from = "./step5/step5_meta_edit.csv", to = "./step7/step7_meta.csv", overwrite = T)
   
   metas <- read.table(file="./step7/spikein2_meta.csv", sep='\t', dec=".", fileEncoding = "UTF-8", header = TRUE) 
