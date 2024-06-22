@@ -651,6 +651,8 @@ taxonomy_assignment_step4 <- function()
   if (foreach::getDoParRegistered() == FALSE) stop("CLuster could not be registered.")
   
   download_stop <- ceiling(temp_query %>% nrow / 1000)
+
+  temp <- NULL
   
   temp_tax <- foreach (j = 1:download_stop, .inorder = FALSE, .combine = rbind, .packages=c("rgbif")) %dopar%
     {
