@@ -1291,7 +1291,7 @@ export_seq <- function(include_GBIF_taxID=F, whichITS=0, style="SINTAX", out_dir
      temp_tax_names %<>% gsub(";[a-z]{1,1}_NA.*","",.)
 
      writeLines(text=temp_tax_names,
-                con = paste0("./",out_dir_name,"./ITS",whichITS,"_",style,".fasta"))
+                con = paste0("./",out_dir_name,"/ITS",whichITS,"_",style,".fasta"))
    }
   
   
@@ -1312,7 +1312,7 @@ export_seq <- function(include_GBIF_taxID=F, whichITS=0, style="SINTAX", out_dir
     temp_tax_names %<>% gsub(";[a-z]{1,1}_NA.*","",.)
     
     writeLines(text=temp_tax_names,
-               con = paste0("./",out_dir_name,"./ITS",which,"ITS_",style,".fasta"))
+               con = paste0("./",out_dir_name,"/ITS",which,"ITS_",style,".fasta"))
   }
   
   temp_meta <- meta10[temp_select,]
@@ -1329,13 +1329,13 @@ export_seq <- function(include_GBIF_taxID=F, whichITS=0, style="SINTAX", out_dir
   names(temp_out) <- temp_names
   
   if(whichITS==1)
-    writeXStringSet(temp_out, filepath = paste0("./",out_dir_name,"./ITS1_",style,".fasta"))
+    writeXStringSet(temp_out, filepath = paste0("./",out_dir_name,"/ITS1_",style,".fasta"))
   if(whichITS==2)
-    writeXStringSet(temp_out, filepath = paste0("./",out_dir_name,"./ITS2_",style,".fasta"))
+    writeXStringSet(temp_out, filepath = paste0("./",out_dir_name,"/ITS2_",style,".fasta"))
   if(whichITS==0)
-    writeXStringSet(temp_out, filepath = paste0("./",out_dir_name,"./ITS0_",style,".fasta"))
+    writeXStringSet(temp_out, filepath = paste0("./",out_dir_name,"/ITS0_",style,".fasta"))
   
-  temp_metafilename <- paste0("./",out_dir_name,"./metadata_full.csv")
+  temp_metafilename <- paste0("./",out_dir_name,"/metadata_full.csv")
   
   if (file.exists(temp_metafilename)) file.remove(temp_metafilename)
   temp_silent <- file.copy(from="./step10/step10_meta.csv", to=temp_metafilename )
