@@ -1255,7 +1255,10 @@ export_seq <- function(include_GBIF_taxID=F, whichITS=0, style="SINTAX", out_dir
   if (out_dir_name %in% dir() %>% not) dir.create(path=out_dir_name)
   
   meta10 <- read.table("./step10/step10_meta.csv", header = TRUE, sep='\t', dec=".", fileEncoding = "UTF-8") 
-  
+
+  meta10 <- meta10[meta10[,"order"] %>% is.na %>% not, ]
+  meta10 <- meta10[meta10[,"phylum"] %>% is.na %>% not, ]
+
   if(whichITS==1)
     temp_select <- meta10[,"ITS1_found"]
   if(whichITS==2)
@@ -1445,7 +1448,7 @@ viz_length <- function(minseq_per_family=50, width_graphic_scale=0.156,
     panel.grid.major.y = element_line(colour = alpha("black",.25)),
     panel.grid.minor.y = element_blank(),
     panel.grid.major.x = element_blank(),
-    legend.position = c(legend_offset_left,1),
+    legend.position.inside= c(legend_offset_left,1),
     legend.text= element_text(colour="black",size=14),
     legend.title= element_text(face="bold",size=16),	
     legend.justification = c(1,1),
