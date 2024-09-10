@@ -8,6 +8,11 @@ setwd(this.path::here())
 
 source("functions.R")
 
+#https://www.bioconductor.org/install/
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install(version = "3.19", ask = FALSE)
+
 #load required packages, this installs packages from CRAN if needed
 load_package("rstudioapi")
 load_package("magrittr")
@@ -15,7 +20,6 @@ load_package("rentrez")
 load_package("xml2")
 load_package("utils")
 load_package("dplyr")
-load_package("BiocManager")
 load_package("rgbif")
 load_package("foreach")
 load_package("parallel")
