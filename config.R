@@ -1,6 +1,6 @@
 #set paths  #don't forget the final /
 itsx_directory <- "/home/bio/Software/ITSx_1.1.3/" 
-vsearch_directory <- "C:/R/"
+vsearch_directory <- "./"
 
 #name of the run
 out_dir_name <- "output"
