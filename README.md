@@ -18,7 +18,7 @@ ITSx \>= 1.1.3, https://microbiology.se/software/itsx/
 
 VSEARCH \>= 2.26, https://github.com/torognes/vsearch
 
-R \>=4.3.2, https://cran.r-project.org/
+R \>=4.4.0, https://cran.r-project.org/
 
 20GB of free disk space
 
@@ -285,7 +285,5 @@ the accession numbers to consider different studies, if possible.
 
 Despite the fact that ITSx only used Tracheophyte and Marchantiophyta
 HMMER profiles to annotate the ITS sequences, some fungal sequences were
-able to pass this step. Contrary to the PLANits (2020) database, which
-identified \~600 fungal sequences,
+able to pass this step.
 
-https://www.ebi.ac.uk/ena/browser/view/MN540406?show=curations
