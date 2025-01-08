@@ -654,7 +654,7 @@ taxonomy_assignment_step4 <- function()
 
   temp <- NULL
   
-  temp_tax <- foreach (j = 1:download_stop, .inorder = FALSE, .combine = rbind, .packages=c("rgbif")) %dopar%
+   temp_tax <- foreach (j = 1:download_stop, .inorder = FALSE, .combine = rbind, .packages=c("rgbif")) %dopar%
     {
       options(scipen = 999)
       Sys.sleep(sample(111:333/100, size=1))
@@ -664,8 +664,16 @@ taxonomy_assignment_step4 <- function()
           temp <- name_backbone_checklist(name_data = temp_query[(j * 1000 - 1000 + 1):(j * 1000),], verbose=TRUE)
         },
         error = function(e){ 
-          Sys.sleep(300)
-          temp <- name_backbone_checklist(name_data = temp_query[(j * 1000 - 1000 + 1):(j * 1000),], verbose=TRUE)
+          Sys.sleep(30)
+          tryCatch(
+            expr = {
+              temp <- name_backbone_checklist(name_data = temp_query[(j * 1000 - 1000 + 1):(j * 1000),], verbose=TRUE)
+            },
+            error = function(e){ 
+              Sys.sleep(500)
+              temp <- name_backbone_checklist(name_data = temp_query[(j * 1000 - 1000 + 1):(j * 1000),], verbose=TRUE)
+            }
+          )
         }
       )
 
