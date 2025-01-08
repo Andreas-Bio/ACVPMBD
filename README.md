@@ -19,7 +19,7 @@ ITSx \>= 1.1.3, https://microbiology.se/software/itsx/
 VSEARCH \>= 2.26, https://github.com/torognes/vsearch
 
 R \>=4.4.0, https://cran.r-project.org/, if Ubuntu: https://cran.r-project.org/bin/linux/ubuntu/
-It might be necessary to install additional libraries:  sudo apt-get install libfreetype6-dev libpng-dev cmake libtiff5-dev libjpeg-dev libsodium-dev libharfbuzz-dev libfribidi-dev
+It might be necessary to install additional libraries: '' sudo apt-get install libfreetype6-dev libpng-dev cmake libtiff5-dev libjpeg-dev libsodium-dev libharfbuzz-dev libfribidi-dev''
 
 20GB of free disk space
 
