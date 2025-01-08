@@ -18,7 +18,7 @@ ITSx \>= 1.1.3, https://microbiology.se/software/itsx/
 
 VSEARCH \>= 2.26, https://github.com/torognes/vsearch
 
-R \>=4.4.0, https://cran.r-project.org/
+R \>=4.4.0, https://cran.r-project.org/, if Ubuntu: https://cran.r-project.org/bin/linux/ubuntu/
 
 20GB of free disk space
 
