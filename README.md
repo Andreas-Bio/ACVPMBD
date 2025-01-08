@@ -25,7 +25,7 @@ It might be necessary to install additional libraries: `sudo apt-get install lib
 
 8GB of RAM
 
-Unix-like platform
+Unix-like platform (WSL2 requires additional configuration, not supported)
 
 <u>Installation</u>
 
