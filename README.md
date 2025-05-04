@@ -284,7 +284,12 @@ the accession numbers to consider different studies, if possible.
 
 9.  Removing off-target sequences
 
-Despite the fact that ITSx only used Tracheophyte and Marchantiophyta
-HMMER profiles to annotate the ITS sequences, some fungal sequences were
-able to pass this step.
+Despite ITSx utilizing HMMER profiles specific to Tracheophyta and Marchantiophyta for ITS region annotation, a subset of non-target sequences—particularly fungal—may still pass this step. These occurrences are often due to misannotations in GenBank, environmental contamination, or the use of broad-spectrum primers during sequencing that amplify non-target regions.
+
+To address this, the script performs an additional filtering step using vsearch. It aligns the candidate plant sequences against a curated fungal ITS reference database provided in the resources folder, encompassing ITS1, ITS2, and full-length ITS sequences. Only alignments exceeding 100 bp are considered. Sequences are flagged for removal if their similarity surpasses the median plus four times the interquartile range of all alignment scores. This adaptive threshold minimizes the exclusion of true plant sequences while effectively filtering out clear fungal contaminants.
+
+Users may substitute the provided fungal references with a custom database by overwriting the corresponding files in the resources directory (e.g., Fungi_final_addins_ITS1_extended.fasta, ITS2_extended.fasta, or ITSfull_extended.fasta). However, caution is advised. Public fungal reference databases, such as UNITE, may contain mislabeled sequences, including plant-origin ITS regions annotated as fungi. Utilizing such databases without thorough curation could lead to the inadvertent removal of genuine plant sequences.
+
+Replacing the fungal database files is sufficient for the script to automatically incorporate the custom references during filtering. No additional modifications are necessary. Ensure that the replacement files contain only high-confidence fungal sequences and adhere to the formatting conventions of the original files.
+
 
