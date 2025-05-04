@@ -284,9 +284,12 @@ the accession numbers to consider different studies, if possible.
 
 Despite ITSx using HMMER profiles trained on Tracheophyta and Marchantiophyta, a small number of fungal sequences may still pass due to misannotations, contamination, or non-specific primers. To remove these, the script aligns sequences against a curated fungal ITS reference using vsearch, retaining only hits longer than 100 bp and flagging those exceeding an adaptive similarity threshold (median + 4×IQR). Users may replace the fungal reference files in the resources folder if needed, but caution is advised, as public fungal databases like UNITE can contain mislabeled plant-origin sequences. This step helps ensure the final output includes only verified vascular plant and Marchantiophyte ITS regions.
 
-10. Writing final ITS sequences
+10. Spike-In
 
-After removing incomplete, unannotated, or off-target sequences, the script reads the filtered metadata table from the previous step and extracts the ITS1, ITS2, or full ITS sequences for each record. Sequences that are empty or missing are excluded to ensure output validity. For ITS1 and ITS2, the script writes each sequence to a dedicated FASTA file, using the corresponding GenBank accession number as the sequence name. For full ITS, the script concatenates the ITS1, 5.8S, and ITS2 regions for each record, preserving their order and appending them into a unified sequence.
+In addition to GenBank-derived sequences, the pipeline supports inclusion of curated spike-in references from floras, voucher-confirmed specimens, or high-confidence external datasets. These spike-ins supplement taxonomic coverage and ensure that key lineages such as fungi, bryophytes, or chlorophytes are retained where needed. This is particularly important for plant metabarcoding studies, where fungal sequences are frequently co-amplified. Spike-in files must be placed in the resources folder and follow the naming convention that includes ITSfull in the filename, for example Bryophyta_final_addins_ITSfull.fasta or Fungi_final_addins_ITSfull_extended.fasta. During processing, these files are automatically detected, annotated, and merged with the main dataset to form a comprehensive reference set for classification.
+
+
+
 
 
 ## Folder and File Structure Overview
