@@ -288,3 +288,59 @@ Despite ITSx using HMMER profiles trained on Tracheophyta and Marchantiophyta, a
 
 After removing incomplete, unannotated, or off-target sequences, the script reads the filtered metadata table from the previous step and extracts the ITS1, ITS2, or full ITS sequences for each record. Sequences that are empty or missing are excluded to ensure output validity. For ITS1 and ITS2, the script writes each sequence to a dedicated FASTA file, using the corresponding GenBank accession number as the sequence name. For full ITS, the script concatenates the ITS1, 5.8S, and ITS2 regions for each record, preserving their order and appending them into a unified sequence.
 
+
+## Folder and File Structure Overview
+
+This section describes the purpose and contents of each processing step folder and its key output files.
+
+### Step 0–3: Data Download and ITS Extraction
+- **temp/**: Temporary files used during download and ITS extraction. Contains intermediate FASTA and XML files.
+- **step1/**
+  - `step1.fasta`: Filtered FASTA file with ITS candidate sequences.
+  - `step1_meta.csv`: Metadata associated with each sequence.
+- **step2/**
+  - `step2.fasta`: ITSx-validated sequences.
+  - `step2_meta.csv`: Updated metadata including ITS region annotations.
+  - `its_potential_recover.fasta`, `temp_its_extracted.fasta`: Intermediate files for rescuing undetected ITS regions.
+- **step3/**
+  - `step3_meta.csv`: Metadata merged with rescued sequences.
+  - `step3_meta_edit.csv`: Metadata after NCBI-based taxonomic assignment.
+  - `tax_results.csv`: GBIF backbone taxonomic lookup results.
+
+### Step 4–5: Taxonomic Curation and Dereplication
+- **step4/**
+  - `step4_meta.csv`: Metadata with GBIF taxonomic verification.
+- **step5/**
+  - `step5_meta.csv`: Input to fungal contamination filtering.
+  - `step5_meta_edit.csv`: Final filtered metadata with fungal contaminants removed.
+  - `temp.fasta`, `temp_fungi_score.csv`: Intermediate files used for similarity-based fungal filtering.
+
+### Step 6–7: Spike-In Handling and Merging
+- **step6/**
+  - `spike_ins.fasta`: Vascular plant reference spike-ins.
+  - `spike_ins.positions.txt`: ITSx annotation of spike-ins.
+  - `spikein_meta.csv`: Basic metadata for spike-ins.
+- **step7/**
+  - `spikein2_meta.csv`: Fully annotated metadata for spike-ins, including ITS and taxonomic data.
+  - `step7_meta.csv`: Combined dataset merging `step5_meta_edit.csv` with `spikein2_meta.csv`.
+
+### Step 8–9: Sequence Validation and Export Preparation
+- **step8/**
+  - `step8_meta.csv`: Metadata before sequence-level filtering.
+  - `step8_meta_edit.csv`: Metadata after applying filters for max divergence, IUPAC content, and misassigned taxa.
+  - `temp.fasta`, `temp_score.csv`, etc.: Intermediate files for sequence similarity evaluation.
+- **step9/**
+  - `step9_meta.csv`: Final cleaned metadata ready for export.
+
+### Step 10: Final Metadata and Export
+- **step10/**
+  - `step10_meta.csv`: Final, fully curated metadata including regional distribution fields.
+  - Files for downstream use (e.g., `ITS1_SINTAX.fasta`, `ITS2_RDP.fasta`, `metadata_full.csv`, `metadata_reduced.csv`) are generated here based on selected export settings.
+
+### Output Summary
+- **ITS region FASTA files**: Region-specific sequence exports in SINTAX or RDP format.
+- **metadata_full.csv**: Complete metadata including all sequence and taxonomic annotations.
+- **metadata_reduced.csv**: Minimal metadata excluding ITS sequences.
+- **Krona.html**: Interactive taxonomic tree visualization of the curated database.
+
+
