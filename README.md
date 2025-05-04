@@ -92,7 +92,7 @@ Excel it is required to use Data->From Text/CSV instead of double
 clicking. Any errors can be safely ignored, these are conversion errors
 if the date is set to NA and can not be converted by Excel.
 
-##Summary
+## Summary
 
 The main pipeline script begins by setting the working directory, sourcing configuration and function files, and ensuring all required R packages are installed. A query to NCBI GenBank retrieves ITS records based on a user-defined search string. The resulting XML data is downloaded in parallel and parsed to extract sequences and metadata. All candidate sequences are concatenated and passed to ITSx to annotate ITS regions. ITSx output is cleaned, and metadata is filtered to retain only informative, valid sequences. Optionally, missing ITS1/ITS2 sequences without flanking regions can be rescued using a VSEARCH-based similarity search and added back. Taxonomic annotations are standardized using the GBIF backbone. The dataset is then dereplicated by limiting the number of sequences per species to avoid overrepresentation. A curated fungal ITS database is used to filter out residual fungal contaminants. Next, high-confidence spike-in reference sequences are added from the resources/ folder to supplement taxonomic groups not targeted by the pipeline (e.g. bryophytes, chlorophytes). After merging, the combined dataset undergoes four sequence quality and taxonomic consistency filters: global similarity, intraspecific consistency, family-level mismatch, and IUPAC ambiguity. Sequences that fail any filter are excluded. Taxonomic occurrence data is retrieved from GBIF to assign species-level distribution metadata. Finally, the reference sequences are exported in multiple formats (e.g., SINTAX, RDP) along with corresponding metadata. Optional visualizations include ITS region length distributions and an interactive Krona plot of taxonomic composition.
 
@@ -292,8 +292,27 @@ Despite ITSx using HMMER profiles trained on Tracheophyta and Marchantiophyta, a
 
 In addition to GenBank-derived sequences, the pipeline supports inclusion of curated spike-in references from floras, voucher-confirmed specimens, or high-confidence external datasets. These spike-ins supplement taxonomic coverage and ensure that key lineages such as fungi, bryophytes, or chlorophytes are retained where needed. This is particularly important for plant metabarcoding studies, where fungal sequences are frequently co-amplified. Spike-in files must be placed in the resources folder and follow the naming convention that includes ITSfull in the filename, for example Bryophyta_final_addins_ITSfull.fasta or Fungi_final_addins_ITSfull_extended.fasta. During processing, these files are automatically detected, annotated, and merged with the main dataset to form a comprehensive reference set for classification.
 
+11. Distance-Based Filtering and Outlier Removal
 
+Global Similarity Filter
+Sequences are aligned against all others using VSEARCH. Those with a best hit below a user-defined global identity threshold (e.g. 70%) are removed.
+This eliminates sequences that are highly divergent from all others, which are often the result of misidentified accessions, non-homologous regions, or contamination.
 
+Intraspecific Consistency Filter
+Pairwise similarities are computed within each species. Sequences whose similarity to other conspecifics falls below a defined threshold (e.g. median identity < 90%) are excluded.
+This removes aberrant sequences that do not cluster with other members of their assigned species, commonly caused by chimeras, incorrect species labels, or co-amplified paralogs.
+
+Family-Level Consistency Filter
+Sequences whose best match lies outside their annotated family are flagged and removed, provided the family is otherwise represented.
+This controls for false-positive annotations at the family level, which can arise from database errors or lineage-specific gene divergence, while preserving legitimate singleton families.
+
+IUPAC Ambiguity Filter
+The proportion of ambiguous nucleotide codes (e.g. R, Y, S) is calculated for each sequence, and sequences with excessive ambiguity (e.g. >2.5%) are removed.
+Ambiguous bases are indicative of low-quality consensus sequences or unresolved base calling and impair alignment, distance estimation, and taxonomic resolution.
+
+12. GBIF-Based Distribution Annotation
+To enrich each species with biogeographic context, the script queries the GBIF occurrence database using the speciesKey for each taxon. It retrieves country-level occurrence counts and aggregates them by UN subregion. Regions with fewer than three records or unknown country codes are excluded. The result is a standardized, condensed region string that summarizes the known native or reported distribution of each taxon, enabling regional filtering and ecological interpretation of metabarcoding results.
+This step helps identify taxa with narrow or widespread ranges, ensures regional relevance of reference sequences, and supports targeted database subsetting for specific geographic applications (e.g. floristic regions).
 
 
 ## Folder and File Structure Overview
