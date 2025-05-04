@@ -291,7 +291,7 @@ After removing incomplete, unannotated, or off-target sequences, the script read
 
 ## Folder and File Structure Overview
 
-This section describes the purpose and contents of each processing step folder and its key output files.
+This section describes the purpose and contents of each processing step folder and its key output files. Not all of the temporary files will be retained, some are automatically deleted/overwritten during the script runtime.
 
 ### Step 0–3: Data Download and ITS Extraction
 - **temp/**: Temporary files used during download and ITS extraction. Contains intermediate FASTA and XML files.
