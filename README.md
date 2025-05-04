@@ -311,6 +311,7 @@ The proportion of ambiguous nucleotide codes (e.g. R, Y, S) is calculated for ea
 Ambiguous bases are indicative of low-quality consensus sequences or unresolved base calling and impair alignment, distance estimation, and taxonomic resolution.
 
 12. GBIF-Based Distribution Annotation
+    
 To enrich each species with biogeographic context, the script queries the GBIF occurrence database using the speciesKey for each taxon. It retrieves country-level occurrence counts and aggregates them by UN subregion. Regions with fewer than three records or unknown country codes are excluded. The result is a standardized, condensed region string that summarizes the known native or reported distribution of each taxon, enabling regional filtering and ecological interpretation of metabarcoding results.
 This step helps identify taxa with narrow or widespread ranges, ensures regional relevance of reference sequences, and supports targeted database subsetting for specific geographic applications (e.g. floristic regions).
 
