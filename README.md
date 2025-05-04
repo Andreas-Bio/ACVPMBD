@@ -92,6 +92,10 @@ Excel it is required to use Data->From Text/CSV instead of double
 clicking. Any errors can be safely ignored, these are conversion errors
 if the date is set to NA and can not be converted by Excel.
 
+##Summary
+
+The main pipeline script begins by setting the working directory, sourcing configuration and function files, and ensuring all required R packages are installed. A query to NCBI GenBank retrieves ITS records based on a user-defined search string. The resulting XML data is downloaded in parallel and parsed to extract sequences and metadata. All candidate sequences are concatenated and passed to ITSx to annotate ITS regions. ITSx output is cleaned, and metadata is filtered to retain only informative, valid sequences. Optionally, missing ITS1/ITS2 sequences without flanking regions can be rescued using a VSEARCH-based similarity search and added back. Taxonomic annotations are standardized using the GBIF backbone. The dataset is then dereplicated by limiting the number of sequences per species to avoid overrepresentation. A curated fungal ITS database is used to filter out residual fungal contaminants. Next, high-confidence spike-in reference sequences are added from the resources/ folder to supplement taxonomic groups not targeted by the pipeline (e.g. bryophytes, chlorophytes). After merging, the combined dataset undergoes four sequence quality and taxonomic consistency filters: global similarity, intraspecific consistency, family-level mismatch, and IUPAC ambiguity. Sequences that fail any filter are excluded. Taxonomic occurrence data is retrieved from GBIF to assign species-level distribution metadata. Finally, the reference sequences are exported in multiple formats (e.g., SINTAX, RDP) along with corresponding metadata. Optional visualizations include ITS region length distributions and an interactive Krona plot of taxonomic composition.
+
 <u>Step-by-step explanation</u>
 
 1.  Startup checks
