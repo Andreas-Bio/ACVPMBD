@@ -637,51 +637,107 @@ taxonomy_assignment_step4 <- function()
   
   write.table(x=meta3 , "./step3/step3_meta_edit.csv", quote = TRUE, row.names = FALSE, sep='\t', dec=".", append=FALSE, fileEncoding = "UTF-8")   
   
-  temp_query <- cbind.data.frame("name"=meta3[,"authority_ncbi"], rank="SPECIES",
-                                 "family"=xtax[,"family"], "order"=xtax[,"order"],
-                                 "genus"= meta3[,"authority_ncbi"] %>% gsub(" .*","",.),
-                                 "kingdom" = "PLANTAE")
-  temp_query <- temp_query[temp_query %>% duplicated %>% not,]
-  
-  closeAllConnections()
-  
-  cl <- parallel::makeCluster(9, type = "PSOCK")
-  
-  doParallel::registerDoParallel(cl)
-  if (foreach::getDoParRegistered() == FALSE) stop("CLuster could not be registered.")
-  
-  download_stop <- ceiling(temp_query %>% nrow / 1000)
+temp_query <- cbind.data.frame("scientificName"=meta3[,"authority_ncbi"], rank="SPECIES",
+                               "family"=xtax[,"family"], "order"=xtax[,"order"],
+                               "genus"= meta3[,"authority_ncbi"] %>% gsub(" .*","",.),
+                               "kingdom" = "PLANTAE")
+temp_query <- temp_query[temp_query %>% duplicated %>% not,]
 
-  temp <- NULL
-  
-   temp_tax <- foreach (j = 1:download_stop, .inorder = FALSE, .combine = rbind, .packages=c("rgbif")) %dopar%
-    {
-      options(scipen = 999)
-      Sys.sleep(sample(111:333/100, size=1))
-      
-      tryCatch(
-        expr = {
-          temp <- name_backbone_checklist(name_data = temp_query[(j * 1000 - 1000 + 1):(j * 1000),], verbose=TRUE)
-        },
-        error = function(e){ 
-          Sys.sleep(30)
-          tryCatch(
-            expr = {
-              temp <- name_backbone_checklist(name_data = temp_query[(j * 1000 - 1000 + 1):(j * 1000),], verbose=TRUE)
-            },
-            error = function(e){ 
-              Sys.sleep(500)
-              temp <- name_backbone_checklist(name_data = temp_query[(j * 1000 - 1000 + 1):(j * 1000),], verbose=TRUE)
-            }
-          )
-        }
-      )
+closeAllConnections()
 
-      temp
-    }
+cl <- parallel::makeCluster(9, type = "PSOCK")
+
+doParallel::registerDoParallel(cl)
+if (foreach::getDoParRegistered() == FALSE) stop("CLuster could not be registered.")
+
+
+gbif_chunk <- function(rows, sleep, bucket) {
+  tryCatch(
+    name_backbone_checklist(
+      name_data   = temp_query[rows, ],
+      sleep       = sleep,
+      bucket_size = bucket,
+      verbose     = TRUE
+    ),
+    error = function(e) e  # return error object instead of stopping
+  )
+}
+
+# list of parameter settings for each pass
+param_sleep  <- c(2, 10, 20, 20, 20, 20)      # three passes
+param_bucket <- c(100, 50, 50, 25, 20, 10)
+n_pass       <- length(param_sleep)
+
+chunk_size <- 200
+n_total    <- nrow(temp_query)
+n_chunks   <- download_stop
+
+# result list, one slot per chunk j
+res <- vector("list", n_chunks)
+
+
+library(foreach)
+library(rgbif)
+
+for (p in seq_len(n_pass)) {
   
-  stopCluster(cl)
-  closeAllConnections()
+  # which chunks still need work?
+  is_null  <- vapply(res, is.null, logical(1))
+  is_err   <- !is_null & vapply(res, inherits, logical(1), "error")
+  ok_idx   <- which(!is_null & !is_err)
+  
+  is_empty <- logical(n_chunks)
+  if (length(ok_idx) > 0L) {
+    is_empty[ok_idx] <- vapply(res[ok_idx], function(x) nrow(x) == 0L, logical(1))
+  }
+  
+  todo <- which(is_null | is_err | is_empty)
+  if (length(todo) == 0L) break  # everything done
+  
+  cat("Taxonomy assign: Pass", p, "with sleep", param_sleep[p],
+      "bucket", param_bucket[p],
+      "on", length(todo), "chunks\n")
+  
+  # run only unresolved chunks in parallel
+  chunk_list <- foreach(
+    j = todo,
+    .combine  = "c",
+    .inorder  = TRUE,
+    .packages = "rgbif"
+  ) %dopar% {
+    
+    rows <- ((j - 1L) * chunk_size + 1L):min(j * chunk_size, n_total)
+    out  <- gbif_chunk(rows, sleep = param_sleep[p], bucket = param_bucket[p])
+    list(out)
+  }
+  
+  # write results back into the correct positions
+  for (k in seq_along(todo)) {
+    res[[todo[k]]] <- chunk_list[[k]]
+  }
+}
+
+# final status
+is_null  <- vapply(res, is.null, logical(1))
+is_err   <- !is_null & vapply(res, inherits, logical(1), "error")
+ok_idx   <- which(!is_null & !is_err)
+
+is_empty <- logical(n_chunks)
+if (length(ok_idx) > 0L) {
+  is_empty[ok_idx] <- vapply(res[ok_idx], function(x) nrow(x) == 0L, logical(1))
+}
+
+bad <- which(is_null | is_err | is_empty)
+if (length(bad) > 0L) {
+  stop("name_backbone_checklist still failed or returned 0 rows for chunks: ",
+       paste(bad, collapse = ", "))
+}
+
+# combine all good chunks
+temp_tax <- bind_rows(res[ok_idx])
+
+stopCluster(cl)
+closeAllConnections()
   
   write.table(x=temp_tax %>% as.data.frame, file = "./step3/tax_results.csv",
               quote=FALSE, row.names = FALSE, sep='\t', dec=".", append=FALSE, fileEncoding = "UTF-8")   
@@ -1530,6 +1586,7 @@ krona_plot <- function()
   write(tout,file=paste0("./",out_dir_name,"/Krona.html"),append=TRUE) 
   
 }
+
 
 
 
