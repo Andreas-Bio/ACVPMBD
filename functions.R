@@ -946,28 +946,20 @@ add_spike_ins <- function()
   temp_ord <- metas[,"orig_title"] %>% gsub("^.*_o:(.*)_f:.*","\\1",.) %>% gsub("^(.*sedis$)|^NA","",.)
   temp_class <- metas[,"orig_title"] %>% gsub("^.*_c:(.*)_o:.*","\\1",.) %>% gsub("^(.*sedis$)|^NA","",.)
   temp_spec <- temp_spec %>% gsub(".*s:","",.) %>% gsub(" sp$","",.) %>% gsub("^(.*sedis$)|^NA","",.)
-  temp_query <- cbind.data.frame("name"=temp_spec, "genus"=temp_gen, "family"=temp_fam, "order"=temp_ord )
-
   
-  closeAllConnections()
+  temp_query <- cbind.data.frame(
+    scientificName = temp_spec,
+    genus          = temp_gen,
+    family         = temp_fam,
+    order          = temp_ord
+  )
   
-  cl <- parallel::makeCluster(6, type = "PSOCK")
-  
-  doParallel::registerDoParallel(cl)
-  if (foreach::getDoParRegistered() == FALSE) stop("CLuster could not be registered.")
-  
-  download_stop <- ceiling(temp_query %>% nrow / 1000)
-  
-  temp_tax <- foreach (j = 1:download_stop, .inorder = FALSE, .combine = rbind, .packages=c("rgbif")) %dopar%
-    {
-      options(scipen = 999)
-      Sys.sleep(sample(111:333/100, size=1))
-      temp <- name_backbone_checklist(name_data = temp_query[(j * 1000 - 1000 + 1):(j * 1000),], verbose=TRUE)
-      temp
-    }
-  
-  stopCluster(cl)
-  closeAllConnections()
+  temp_tax <- name_backbone_checklist(
+    name_data = temp_query,
+    sleep = 2,
+    bucket_size = 1000,
+    verbose   = FALSE
+  )
   
   write.table(x=temp_tax , file = "./step7/tax_results.csv", quote = TRUE, row.names = FALSE, sep='\t', dec=".", append=FALSE, fileEncoding = "UTF-8")   
   temp_tax <- read.table(file = "./step7/tax_results.csv", sep='\t', dec=".", fileEncoding = "UTF-8", header=T)  
@@ -1586,6 +1578,7 @@ krona_plot <- function()
   write(tout,file=paste0("./",out_dir_name,"/Krona.html"),append=TRUE) 
   
 }
+
 
 
 
